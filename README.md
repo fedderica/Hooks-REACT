@@ -1,5 +1,70 @@
 # Getting Started with Create React App
 
+
+
+
+HOOKS - 
+LOS HOOKS SON UNA CARECTERISTICA DE REAT QUE APARECIERON A PARTIR DE LA VERSION 16.8
+
+Gracias a los Hooks podemos trabajar con componentes funcionales con acceso a su estado y ciclo de vida y por tanto, prescindir de los componentes de clase (si queremos).
+
+Reglas básicas para usar los hooks 
+-Ser llamados en el nivel superior de nuestro código: Nunca dentro de ciclos, funciones anidadas o condicionales.
+
+-Ser llamados en funciones u otros Hooks personalizados de React.
+
+HOOKS BASICOS.
+
+-useState: permite agregar un estado local a un componente funcional y cambia su estado. 
+-Un Estado en React es la memoria de un componente que permite cambiar lo que se muestra en pantalla como resultado de una interacción.
+
+import React, { useState } from 'react';
+
+function MyCount() {
+    const [count, setCount] = useState(0);
+    return (
+        <div>
+        <p>Has hecho click {count} veces </p>
+        <button type="button" onClick={() => setCount(count + 1)}> Click </button>
+        </div>
+    );
+}
+
+export default MyCount;
+Hooks Basicos 
+-useEffect: permite realizar efectos a un componente funcional. Equivale a los métodos de vida de los componentes de clase:
+
+-ComponentDidMount
+-ComponentDidUpdate
+-ComponentWillUnmount.
+
+Este hook se utiliza después del primer renderizado y después de cada actualización.
+
+Otros HOOKS
+
+-useReducer: alternativa a useState. Permite manipular el estado de nuestros componentes funcionales.
+
+-useCallback: permite crear elementos que mantienen sus referencias a lo largo de los renders de un componente tipo función.
+
+-useRef: permite referenciar un valor que no es necesario para el renderizado.
+
+-Otros HOOKS
+
+-useImperativeHandle: es un hook que te permite personalizar el identificador expuesto como una ref.
+
+-useLayoutEfect: es una version de un useEffect que actúa antes de que el navegador vuelva a "pintar" la pantalla.
+
+-useMemo: es un hook que permite guardar en caché el resultado de un cálculo entre rederizados.
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
