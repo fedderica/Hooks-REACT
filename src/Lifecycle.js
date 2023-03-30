@@ -1,8 +1,27 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 
 const Lifecycle = () => {
     const [counter1, setCounter1] = useState(0);
     const [counter2, setCounter2] = useState(0);
+
+    useEffect(() => {
+        console.log('useEffect no dependency');
+
+    })
+
+    useEffect(() => {
+        console.log('useffect [counter1]');
+    }, [counter1]);
+
+    useEffect(() => {
+        console.log('useEffect [counter2]');
+    }, [counter2]);
+
+    useEffect(()=> {
+        console.log('useEffect [counter1,  counter2]')
+    }, [counter1, counter2]);
+
+
 
     return ( 
         <div>
