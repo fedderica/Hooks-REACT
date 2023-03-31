@@ -1,18 +1,24 @@
-import React from 'react';
-import FetchCard from './FetchCard';
+import React, { useState } from 'react';
 import Lifecycle from './Lifecycle';
-import ReactDOM from "react-dom/client";
+// import FetchCard from './FetchCard';
+// import ResizeApp from './ResizeApp';
 
-const App = ReactDOM.createRoot(document.getElementById("root"));
-root.render( 
-  
-    <div className="App">
-      <h1>APP</h1>
-    <Lifecycle/>
-    <FetchCard/>
+function App() {
+  const [show, setShow] = useState(false);
+
+  return (
+    <div>
+      <button onClick={() => setShow(!show)}>
+        Show/Hide
+      </button>
+      { show && <Lifecycle />}
+      
+      {/* <FetchCard /> */}
+
+      {/* { show && <ResizeApp />} */}
+      
     </div>
-);
-
-
+  );
+}
 
 export default App;
